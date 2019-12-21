@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/iKurisu/fetch-reddit/issues"
   },
-  "homepage": "https://github.com/iKurisu/fetch-reddit#readme"
+  "homepage": "https://github.com/iKurisu/fetch-reddit#readme",
+  "dependencies": {
+    "inquirer": "^7.0.1"
+  }
 }
