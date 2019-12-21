@@ -1,2 +1,2 @@
 # fetch-reddit
-A small cmd app for browsing reddit.
+A small command-line app for browsing reddit.
