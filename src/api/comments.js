@@ -6,6 +6,6 @@ const fetchPost = async permalink => {
   return response.json();
 };
 
-const getPostBody = response => response[0].data.children[0].data.selftext;
+const getComments = response => response[1].data.children;
 
-module.exports = async permalink => getPostBody(await fetchPost(permalink));
+module.exports = async permalink => getComments(await fetchPost(permalink));

@@ -8,7 +8,7 @@ const fetchSubreddit = async sub => {
 };
 
 const handleInvalid = response => {
-  if (response.data && response.data.dist === 0) {
+  if ((response.data && response.data.dist === 0) || response.error === 404) {
     return "Sorry, this subreddit does not exist.";
   }
 
@@ -23,13 +23,13 @@ const handleQuarantine = response => {
   return response;
 };
 
-const getTitles = response => {
+const getData = response => {
   if (typeof response !== "string") {
-    return response.data.children.map(child => child.data.title);
+    return response.data.children.map(child => child.data);
   }
 
   return response;
 };
 
 module.exports = async sub =>
-  pipe(handleInvalid, handleQuarantine, getTitles)(await fetchSubreddit(sub));
+  pipe(handleInvalid, handleQuarantine, getData)(await fetchSubreddit(sub));
