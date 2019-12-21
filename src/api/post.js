@@ -1,5 +1,4 @@
 const fetch = require("node-fetch");
-const pipe = require("../utils/pipe");
 const { urlFromPermalink } = require("../utils/url");
 
 const fetchPost = async permalink => {
